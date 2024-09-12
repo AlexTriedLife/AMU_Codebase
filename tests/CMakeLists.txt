@@ -1,0 +1,19 @@
+enable_testing()
+# Locate Google Test
+include_directories(${GTEST_DIR}/include)
+
+file(GLOB_RECURSE TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
+
+# Add the executable for running tests
+add_executable(runTests ${TEST_SOURCES})
+
+# Debugmsg
+message(STATUS "Test sources: ${TEST_SOURCES}")
+
+# Link test executable against Google Test and the shared library
+target_link_libraries(runTests
+    GTest::gtest
+    GTest::gtest_main
+    ${Boost_LIBRARIES}
+)
+add_test(NAME runTests COMMAND runTests)
