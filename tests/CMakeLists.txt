@@ -4,11 +4,13 @@ include_directories(${GTEST_DIR}/include)
 
 file(GLOB_RECURSE TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
 
+set(INCLUDES ${CMAKE_SOURCE_DIR../include})
 # Add the executable for running tests
-add_executable(runTests ${TEST_SOURCES})
+add_executable(runTests ${TEST_SOURCES} ../src/note.cc )
 
 # Debugmsg
 message(STATUS "Test sources: ${TEST_SOURCES}")
+message(STATUS "sources: ${SOURCES}")
 
 # Link test executable against Google Test and the shared library
 target_link_libraries(runTests

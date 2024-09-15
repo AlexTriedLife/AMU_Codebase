@@ -14,7 +14,6 @@
 #include "defines.h"
 #include <sstream>
 #include <fstream>
-#include <boost/filesystem.hpp>
 #include <string>
 #include <iostream>
 NS_AMU_BEGINS

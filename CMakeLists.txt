@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
+cmake_policy(SET CMP0167 NEW)
 
 project(AMU_Codebase)
+
 
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
@@ -11,11 +13,14 @@ set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(TEST_DIR ${CMAKE_SOURCE_DIR}/tests)
 
-# Set Boost root and find Boost libraries
 set(BOOST_ROOT "D:/Libraries/C++/boost_1_85_0")
-set(CMAKE_PREFIX_PATH "${BOOST_ROOT}/stage/lib/cmake/Boost-1.85.0")
-find_package(Boost 1.85 REQUIRED COMPONENTS filesystem)
+set(Boost_NO_SYSTEM_PATHS TRUE)
 
+# Set the CMake prefix path for Boost
+set(CMAKE_PREFIX_PATH "${BOOST_ROOT}/stage/lib/cmake/Boost-1.85.0")
+
+# Find Boost components
+find_package(Boost 1.85 REQUIRED COMPONENTS filesystem)
 # Download GoogleTest as part of the build process
 include(FetchContent)
 FetchContent_Declare(

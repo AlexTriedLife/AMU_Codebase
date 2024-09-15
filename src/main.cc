@@ -1,7 +1,7 @@
 #include <iostream>
-#include "file.h"
+#include "note.h"
 int main(int argc, char *argv[])
 {
-    amu::file::File f("text");
-    std::cout << "Hello world!" << std::endl;
+    amu::music::Note n("C#");
+    n.printNoteInfo();
 }
