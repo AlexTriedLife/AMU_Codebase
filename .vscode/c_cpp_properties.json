@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "D:/Libraries/C++/boost_1_85_0",
-                "C:/Program Files (x86)/googletest-distribution/include"
+                "C:/Program Files (x86)/googletest-distribution/include",
+                "C:/Program Files (x86)/SDL3/include",
+                "C:/Program Files (x86)/SDL3_image/include"
             ],
             "defines": [
                 "_DEBUG",

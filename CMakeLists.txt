@@ -34,11 +34,14 @@ FetchContent_MakeAvailable(googletest)
 
 # Find OpenSSL
 find_package(OpenSSL REQUIRED)
+find_package(SDL3 REQUIRED)
+find_package(SDL3_image REQUIRED)
 
 # Include directories
 include_directories(
     ${Boost_INCLUDE_DIRS}
     ${OpenSSL_INCLUDE_DIRS}
+    ${SDL_INCLUDE_DIRS}
     ${INCLUDE_DIR}
 )
 
@@ -52,6 +55,8 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 # Link libraries to the executable
 target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
+    SDL3::SDL3
+    SDL3_image::SDL3_image
     GTest::gtest
     GTest::gtest_main
     ${OpenSSL_LIBRARIES}

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "note.h"
+#include "screen.h"
 int main(int argc, char *argv[])
 {
-    amu::music::Note n("C#");
-    n.printNoteInfo();
+    amu::graphics::Screen screen("Screen test", 800, 600);
+    screen.run();
 }

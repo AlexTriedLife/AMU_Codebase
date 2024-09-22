@@ -9,10 +9,13 @@
 #define NS_STRING_ENDS }
 #define NS_FILE_BEGINS namespace file {
 #define NS_FILE_ENDS }
+#define NS_GRAPHICS_BEGINS namespace graphics {
+#define NS_GRAPHICS_ENDS }
 
 
 // Use macros
 #define USE_NS_AMU using namespace amu
+#define USE_NS_GRAPHICS using namespace amu::graphics
 #define USE_NS_MUSIC using namespace amu::music
 #define USE_NS_STRING using namespace amu::string
 #define USE_NS_FILE using namespace amu::file
