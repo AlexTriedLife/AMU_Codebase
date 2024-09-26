@@ -13,6 +13,6 @@ private:
 
 
 };
-NS_AMU_ENDS
-NS_MUSIC_ENDS
+NS_ENDS // music
+NS_ENDS // amu
 #endif 

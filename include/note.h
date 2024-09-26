@@ -43,8 +43,8 @@ class Note {
         static const std::unordered_map<std::string, std::string> pitchMap;
 };
 
-NS_MUSIC_ENDS
-NS_AMU_ENDS
+NS_ENDS      // music
+    NS_ENDS  // amu
 // Namespace ends
 
 #endif

@@ -6,7 +6,7 @@ file(GLOB_RECURSE TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
 
 set(INCLUDES ${CMAKE_SOURCE_DIR../include})
 # Add the executable for running tests
-add_executable(runTests ${TEST_SOURCES} ../src/note.cc )
+add_executable(runTests ${TEST_SOURCES} ${CMAKE_SOURCE_DIR}/src/note.cc) 
 
 # Debugmsg
 message(STATUS "Test sources: ${TEST_SOURCES}")
@@ -17,5 +17,8 @@ target_link_libraries(runTests
     GTest::gtest
     GTest::gtest_main
     ${Boost_LIBRARIES}
+    SDL3::SDL3
+    SDL3_image::SDL3_image
+    ${OPENSSL_LIBRARIES}
 )
 add_test(NAME runTests COMMAND runTests)

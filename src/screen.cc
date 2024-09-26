@@ -5,17 +5,13 @@ Screen::Screen(const char *title, const uint16_t sw, const uint16_t sh)
       SCREEN_WIDTH(sh),
       SCREEN_HEIGHT(sw),
       m_window(nullptr),
-      m_renderer(nullptr) {
-        if (!init()) {
-                std::cerr << "Screen failed to initialize" << std::endl;
-        } else {
-                std::cout << "initialized" << std::endl;
-        }
-}
-Screen::~Screen() {}
+      m_renderer(nullptr) {}
+Screen::~Screen() { clean(); }
 void Screen::run() {
         bool isRunning{true};
-
+        if (!init()) {
+                isRunning = false;
+        }
         while (isRunning) {
                 SDL_Event event;
                 while (SDL_PollEvent(&event)) {
@@ -63,3 +59,6 @@ bool Screen::init() {
 
         return success;
 }
+
+uint16_t Screen::getScreenHeight() { return SCREEN_HEIGHT; }
+uint16_t Screen::getScreenWidth() { return SCREEN_WIDTH; }
