@@ -29,10 +29,9 @@ inline std::chrono::microseconds durationMicSec(const TimePoint& start,
         return std::chrono::duration_cast<microseconds>(end - start);
 }
 
-struct start_end
-{
-    TimePoint start;
-    TimePoint end;
+struct start_end {
+        TimePoint start;
+        TimePoint end;
 };
 
 NS_ENDS      // util

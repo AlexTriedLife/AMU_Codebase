@@ -7,7 +7,6 @@
 #include "defines.h"
 #include "note.h"
 
-
 // Namespace Begins
 NS_AMU_BEGINS
 NS_MUSIC_BEGINS

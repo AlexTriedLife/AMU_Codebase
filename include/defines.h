@@ -8,8 +8,8 @@
 #define NS_GRAPHICS_BEGINS namespace graphics {
 #define NS_SYS_BEGINS namespace sys {
 #define NS_UTIL_BEGINS namespace util {
-
-#define NS_ENDS } // Add comment to end of line to illustrate which namespace ends
+#define NS_ENDS \
+        }  // Add comment to end of line to illustrate which namespace ends
 
 // Use macros
 #define USE_NS_AMU using namespace amu
@@ -20,4 +20,4 @@
 #define USE_NS_SYS using namespace amu::sys
 #define USE_NS_UTIL using namespace amu::util
 
-#endif // DEFINES_H
+#endif  // DEFINES_H
