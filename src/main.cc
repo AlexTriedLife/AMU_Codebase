@@ -2,9 +2,14 @@
 
 
 #include "screen.h"
-#include "util_time.h"
+#include "wave.h"
 int main(int argc, char *argv[]) {
-        std::cout << "current time: " << amu::util::now() << "\n";
         amu::graphics::Screen screen("Screen test", 800, 600);
+
+        amu::audio::Wave wave(400.0, 300.0, 100.0, 50.0);
+        std::cout << wave.getAmplitude() << "\n";
         screen.run();
+        
+
+
 }

@@ -14,7 +14,7 @@ include_directories(
     ${SDL_INCLUDE_DIRS}
     ${INCLUDE_DIR}
 )
-add_executable(runTests ${TEST_SOURCES} ${SOURCES}/note.cc ${SOURCES}/vector2.cc)
+add_executable(runTests ${TEST_SOURCES} ${SOURCES}/note.cc ${SOURCES}/vector2.cc ${SOURCES}/wave.cc)
 
 # Debugmsg
 message(STATUS "Test sources: ${TEST_SOURCES}")

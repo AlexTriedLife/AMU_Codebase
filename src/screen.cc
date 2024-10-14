@@ -10,6 +10,7 @@ Screen::~Screen() { clean(); }
 void Screen::run() {
         bool isRunning{true};
         if (!init()) {
+                std::cerr << "failed to initialize screen\n";
                 isRunning = false;
         }
         while (isRunning) {
@@ -18,10 +19,14 @@ void Screen::run() {
                         if (event.type == SDL_EVENT_QUIT) {
                                 isRunning = false;
                         }
+
                 }
+                    	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
+                        SDL_RenderClear(m_renderer);
+
+                        SDL_RenderPresent(m_renderer);
         }
         clean();
-        SDL_QuitEvent();
         SDL_Quit();
 }
 void Screen::clean() {
@@ -33,6 +38,22 @@ void Screen::clean() {
                 SDL_DestroyRenderer(m_renderer);
                 m_renderer = nullptr;
         }
+}
+void Screen::update() {
+        SDL_RenderClear(m_renderer);
+        SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
+        // Define a rectangle
+        SDL_FRect rect{};
+        rect.x = SCREEN_WIDTH / 4;
+        rect.y = SCREEN_HEIGHT / 4;
+        rect.w = SCREEN_WIDTH / 2;
+        rect.h = SCREEN_HEIGHT / 2;
+        SDL_RenderFillRect(m_renderer, &rect);
+        SDL_RenderPresent(m_renderer);
+        SDL_Delay(1000 / 60);
+        std::cout << "Rendering\n";
+
+
 }
 bool Screen::init() {
         bool success = true;
@@ -60,5 +81,8 @@ bool Screen::init() {
         return success;
 }
 
-uint16_t Screen::getScreenHeight() { return SCREEN_HEIGHT; }
-uint16_t Screen::getScreenWidth() { return SCREEN_WIDTH; }
+
+uint16_t Screen::getScreenHeight() const { return SCREEN_HEIGHT; }
+SDL_Window *Screen::getWindow() const { return m_window; }
+SDL_Renderer *Screen::getRenderer() const { return m_renderer; }
+uint16_t Screen::getScreenWidth() const { return SCREEN_WIDTH; }

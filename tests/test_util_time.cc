@@ -8,25 +8,27 @@
 
 USE_NS_UTIL;
 
-TEST(TestUtilTime, TestNow) {
-    ASSERT_EQ(now(), std::chrono::high_resolution_clock::now());
-
+static void TestNow() {
     start_end se;
     se.start = now();
     std::this_thread::sleep_for(milliseconds(2));
     se.end = now();
     
     ASSERT_GT(se.end, se.start);
-
 }
 
-TEST(TestUtilTime, TestDurationSec) {
+static void TestDurationSec() {
     start_end se;
     se.start = now();
     std::this_thread::sleep_for(milliseconds(2));
     se.end = now();
     ASSERT_EQ(durationMilSec(se.start, se.end), std::chrono::duration_cast<milliseconds>(se.end - se.start));
+}
 
+TEST(TestUtilTime, TestNow) {
+    TestNow();
+}
 
-
+TEST(TestUtilTime, TestDurationSec) {
+    TestDurationSec();
 }

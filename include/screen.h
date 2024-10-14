@@ -16,20 +16,23 @@ class Screen {
                const uint16_t SCREEN_HEIGHT);
         ~Screen();
         void run();
+        void clean();
+        void update();
+        bool init();
+
+        // Getters
+        uint16_t getScreenWidth() const;
+        uint16_t getScreenHeight() const;
+        SDL_Window *getWindow() const;
+        SDL_Renderer *getRenderer() const;
 
        private:
-        void clean();
-        bool init();
         SDL_Renderer *m_renderer;
         SDL_Window *m_window;
         const uint16_t SCREEN_WIDTH;
         const uint16_t SCREEN_HEIGHT;
         const char *SCREEN_TITLE;
 
-        // Getters
-       public:
-        uint16_t getScreenWidth();
-        uint16_t getScreenHeight();
 };
 
 NS_ENDS      // graphics

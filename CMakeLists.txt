@@ -18,8 +18,6 @@ set(Boost_NO_SYSTEM_PATHS TRUE)
 # Set the CMake prefix path for Boost
 set(CMAKE_PREFIX_PATH "${BOOST_ROOT}/stage/lib/cmake/Boost-1.85.0")
 
-# Find Boost components
-find_package(Boost 1.85 REQUIRED COMPONENTS filesystem)
 # Download GoogleTest as part of the build process
 include(FetchContent)
 FetchContent_Declare(
