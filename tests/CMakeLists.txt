@@ -2,7 +2,7 @@ enable_testing()
 # Locate Google Test
 include_directories(${GTEST_DIR}/include)
 
-file(GLOB_RECURSE TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
+file(GLOB_RECURSE TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 set(INCLUDES ${CMAKE_SOURCE_DIR../include})
 set(SOURCES ${CMAKE_SOURCE_DIR}/src)
@@ -14,7 +14,7 @@ include_directories(
     ${SDL_INCLUDE_DIRS}
     ${INCLUDE_DIR}
 )
-add_executable(runTests ${TEST_SOURCES} ${SOURCES}/note.cc ${SOURCES}/vector2.cc ${SOURCES}/wave.cc)
+add_executable(runTests ${TEST_SOURCES} ${SOURCES}/note.cpp ${SOURCES}/vector2.cpp ${SOURCES}/wave.cpp ${SOURCES}/triangle.cpp)
 
 # Debugmsg
 message(STATUS "Test sources: ${TEST_SOURCES}")

@@ -23,10 +23,13 @@ class Screen {
         // Getters
         uint16_t getScreenWidth() const;
         uint16_t getScreenHeight() const;
+        SDL_GLContext getGlContext() const;
         SDL_Window *getWindow() const;
         SDL_Renderer *getRenderer() const;
+        
 
        private:
+        SDL_GLContext m_glContext;
         SDL_Renderer *m_renderer;
         SDL_Window *m_window;
         const uint16_t SCREEN_WIDTH;

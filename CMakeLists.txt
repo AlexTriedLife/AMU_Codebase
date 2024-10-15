@@ -34,7 +34,7 @@ find_package(OpenSSL REQUIRED)
 find_package(SDL3 REQUIRED)
 find_package(SDL3_image REQUIRED)
 # Find source files
-file(GLOB_RECURSE SOURCES ${SOURCE_DIR}/*.cc)
+file(GLOB_RECURSE SOURCES ${SOURCE_DIR}/*.cpp)
 
 # Export compile commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

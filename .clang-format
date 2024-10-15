@@ -1,13 +1,13 @@
-﻿---
-BasedOnStyle: Google
+# Format Style Options - Created with Clang Power Tools
+---
 AlignAfterOpenBracket: Align
-AlignOperands: 'true'
-AllowAllArgumentsOnNextLine: 'false'
-AllowAllParametersOfDeclarationOnNextLine: 'false'
+AlignOperands: true
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+BasedOnStyle: Google
 BreakInheritanceList: BeforeColon
-ColumnLimit: '80'
-CompactNamespaces: 'true'
-IndentWidth: '8'
+ColumnLimit: 80
+CompactNamespaces: true
+IndentWidth: 8
 PointerAlignment: Right
-
 ...
